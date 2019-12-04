@@ -10,7 +10,6 @@ def optcode_reader(input_list):
         if len(input_list) >= pos+3 and pos % 4 == 0 and input_list[pos] != 99:
             first_value = input_list[input_list[pos+1]]
             second_value = input_list[input_list[pos+2]]
-            # print(first_value, second_value)
             if input_list[pos] == 1:
                 input_list[input_list[pos+3]] = first_value + second_value
             elif input_list[pos] == 2:
