@@ -8,15 +8,17 @@ def check_double_digit2(i):
 
 def calc_possible_passwords():
     count = 0
-    for number in range(356777, 777778):
+    adjacent = False
+    for number in range(356261, 846303):
         if not check_double_digit(number):
             continue
-
         number_string = (str(number))
         for index, digit in enumerate(number_string[:-1]):
             if int(digit) > int(number_string[index+1]):
                 break
-            if index+1 == len(number_string):
+            if int(digit) == int(number_string[index+1]):
+                adjacent = True
+            if adjacent and len(number_string) == index + 2:
                 count += 1
 
     print(count)
